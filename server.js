@@ -2,7 +2,7 @@ const db = require('./db');
 const inquirer = require('inquirer');
 require('console.table');
 
-// Menu option so users can select what action they want to perform
+
 function Menu() {
     inquirer.prompt([
         {
@@ -21,7 +21,7 @@ function Menu() {
             ]
         }
     ])
-        // Switch statement after the user selects an option to take them to the right function
+
         .then(res => {
             switch (res.menu) {
                 case 'View All Departments':
