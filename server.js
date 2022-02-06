@@ -3,12 +3,12 @@ const inquirer = require('inquirer');
 require('console.table');
 
 
-function Menu() {
+const Menu = () => {
     inquirer.prompt([
         {
             type: 'list',
             name: 'menu',
-            message: 'What would you like?',
+            message: 'What would you like to do?',
             choices: [
                 'View All Departments',
                 'View All Roles',
@@ -20,9 +20,7 @@ function Menu() {
                 'Done'
             ]
         }
-    ])
-
-        .then(res => {
+    ]).then(res => {
             switch (res.menu) {
                 case 'View All Departments':
                     return viewAllDepartments();
