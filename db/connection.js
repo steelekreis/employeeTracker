@@ -9,7 +9,7 @@ const db = mysql.createConnection({
   database: 'employeeDB'
 });
 
-connection.db(function (err) {
+db.connect(function (err) {
     if (err) throw err;
 });
 
