@@ -4,7 +4,7 @@ require('console.table');
 
 
 const Menu = () => {
-    inquirer.prompt([
+    inquirer.prompt(
         {
             type: 'list',
             name: 'menu',
@@ -20,8 +20,8 @@ const Menu = () => {
                 'Done'
             ]
         }
-    ]).then(res => {
-            switch (res.menu) {
+    ).then((answer) => {
+            switch (answer.menu) {
                 case 'View All Departments':
                     return viewAllDepartments();
                 case 'View All Roles':
