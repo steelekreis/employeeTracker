@@ -83,7 +83,7 @@ async function addRole() {
     const role = await inquirer.prompt([
         {
             type: 'input',
-            name: 'title',
+            name: 'jobTitle',
             message: 'What is the title for this role?'
         },
         {
@@ -99,14 +99,14 @@ async function addRole() {
         }
     ]);
     await db.addRole(role);
-    console.log(`Added ${role.title} to the database`);
+    console.log(`Added ${role.jobTitle} to the database`);
     Menu();
 }
 
 async function addEmployee() {
     const [role] = await db.viewAllRoles();
-    const roleChoices = role.map(({ id, title }) => ({
-        name: title,
+    const roleChoices = role.map(({ id, jobTitle }) => ({
+        name: jobTitle,
         value: id
     }));
     const employee = await inquirer.prompt([
@@ -145,8 +145,8 @@ async function updateEmployeeRole() {
     }));
 
     const [role] = await db.viewAllRoles();
-    const roleChoices = role.map(({ id, title }) => ({
-        name: title,
+    const roleChoices = role.map(({ id, jobTitle }) => ({
+        name: jobTitle,
         value: id
     }));
 
